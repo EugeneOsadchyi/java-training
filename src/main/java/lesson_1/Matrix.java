@@ -1,9 +1,6 @@
 package lesson_1;
 
-/**
- * Created by silver_od on 4/27/16.
- */
-public class Matrix {
+class Matrix {
     public static int[][] transpone(int[][] array) {
         int[][] transponed_array = initialize_transponed_array(array);
 
