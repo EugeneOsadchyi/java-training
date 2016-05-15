@@ -1,7 +1,6 @@
 package lesson_1;
 
 class MathOperations {
-
     public static double average(double[] numbers, int length) {
         double sum = sum(numbers);
         return sum / length;

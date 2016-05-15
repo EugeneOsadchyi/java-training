@@ -1,7 +1,6 @@
 package lesson_1;
 
 public class Main {
-
     public static void main(String[] args) { }
 
     public static void task_1() {
@@ -21,6 +20,4 @@ public class Main {
         int[][] transponed_array = Matrix.transpone(array);
         Matrix.print_array(transponed_array);
     }
-
-
 }
