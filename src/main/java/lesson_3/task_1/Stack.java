@@ -1,51 +1,51 @@
 package lesson_3.task_1;
 
-public class Stack {
-    private double[] values;
+public class Stack implements IntStack {
+    private int[] stack;
     private int elementsInStack;
 
-    public Stack(int length) {
-        this.values = new double[length];
+    public Stack(int size) {
+        this.stack = new int[size];
         this.elementsInStack = 0;
     }
 
-    public void push(double value) {
+    public void push(int value) {
         checkLength();
-        this.values[elementsInStack++] = value;
+        this.stack[elementsInStack++] = value;
 
-        System.out.println("--- LOG: " + value + " pushed to lesson_3.task_1.Stack");
+        System.out.println("--- LOG: " + value + " pushed to Stack");
     }
 
-    public double pop() throws RuntimeException {
+    public int pop() throws RuntimeException {
         if (elementsInStack == 0) {
-            throw new RuntimeException("--- ERROR: lesson_3.task_1.Stack is empty. Have no elements to pop.");
+            System.out.println("Stack is empty.");
+            return 0;
         }
-
-        double value = this.values[--elementsInStack];
-        System.out.println("--- LOG: " + value + " popped from lesson_3.task_1.Stack");
-
+        int value = this.stack[--elementsInStack];
+        
+        System.out.println("--- LOG: " + value + " popped from Stack");
         return value;
     }
 
     private void checkLength() {
-        if (elementsInStack == this.values.length) {
-            System.out.println("--- LOG: Increasing lesson_3.task_1.Stack size by 1");
+        if (elementsInStack == this.stack.length) {
+            System.out.println("--- LOG: Increasing Stack size by 1");
 
-            double[] new_values = new double[this.values.length + 1];
+            int[] new_values = new int[this.stack.length + 1];
 
-            for (int i = 0; i < this.values.length; i++) {
-                new_values[i] = this.values[i];
+            for (int i = 0; i < this.stack.length; i++) {
+                new_values[i] = this.stack[i];
             }
 
-            this.values = new_values;
+            this.stack = new_values;
         }
     }
 
     @Override
     public String toString() {
-        String str = "--- INFO: lesson_3.task_1.Stack size: " + this.values.length + " Elements in lesson_3.task_1.Stack: " + this.elementsInStack;
-        str +=  " lesson_3.task_1.Stack: ";
-        for (double element : this.values) {
+        String str = "--- INFO: Stack size: " + this.stack.length + " Elements in Stack: " + this.elementsInStack;
+        str +=  " Stack: ";
+        for (int element : this.stack) {
             str += element + " ";
         }
 

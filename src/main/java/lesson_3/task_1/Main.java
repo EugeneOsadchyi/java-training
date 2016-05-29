@@ -8,40 +8,32 @@ public class Main {
         System.out.println("\n--- Print stack");
         System.out.println(stack);
 
-        System.out.println("\n--- Insert element to lesson_3.task_1.Stack");
-        stack.push(5.0);
+        System.out.println("\n--- Insert element to Stack");
+        stack.push(5);
         System.out.println(stack);
 
-        System.out.println("\n--- Get element from lesson_3.task_1.Stack");
-        try {
-            stack.pop();
-        } catch (Exception e) {
-            System.out.println("No elements left!");
-        }
+        System.out.println("\n--- Get element from Stack");
+        stack.pop();
         System.out.println(stack);
 
-        System.out.println("\n--- Insert element to lesson_3.task_1.Stack");
-        stack.push(7.0);
+        System.out.println("\n--- Insert element to Stack");
+        stack.push(7);
         System.out.println(stack);
 
-        System.out.println("\n--- Insert elements to lesson_3.task_1.Stack to match stack size");
-        stack.push(10.0);
-        stack.push(4.0);
-        stack.push(7.0);
-        stack.push(20.0);
+        System.out.println("\n--- Insert elements to Stack to match stack size");
+        stack.push(10);
+        stack.push(4);
+        stack.push(7);
+        stack.push(20);
         System.out.println(stack);
 
         System.out.println("\n--- Insert elements over stack size");
-        stack.push(4.0);
-        stack.push(7.0);
+        stack.push(4);
+        stack.push(7);
         System.out.println(stack);
 
-        System.out.println("\n--- Get elements from lesson_3.task_1.Stack");
-        try {
-            for (int i = 0; i < 7; i++) stack.pop();
-        } catch (RuntimeException e) {
-            System.out.println(e.getMessage());
-        }
+        System.out.println("\n--- Get elements from Stack");
+        for (int i = 0; i < 7; i++) stack.pop();
         System.out.println(stack);
     }
 }
